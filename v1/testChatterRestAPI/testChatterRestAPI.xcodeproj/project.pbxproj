@@ -20,7 +20,25 @@
 		355CD15D17F0663100E58EEE /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355CD15C17F0663100E58EEE /* FlipsideViewController.m */; };
 		355CD16017F0663100E58EEE /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355CD15E17F0663100E58EEE /* MainViewController.xib */; };
 		355CD16317F0663100E58EEE /* FlipsideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 355CD16117F0663100E58EEE /* FlipsideViewController.xib */; };
+		355CD17717F06EFF00E58EEE /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 355CD17417F06A7300E58EEE /* libcrypto.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		355CD17317F06A7300E58EEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 355CD16F17F06A7300E58EEE /* openssl.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9069D28C0FCE659A0042E34C;
+			remoteInfo = crypto;
+		};
+		355CD17517F06E5D00E58EEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 355CD16F17F06A7300E58EEE /* openssl.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9069D28B0FCE659A0042E34C;
+			remoteInfo = crypto;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		355CD13D17F0663100E58EEE /* testChatterRestAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testChatterRestAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +60,7 @@
 		355CD15C17F0663100E58EEE /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
 		355CD15F17F0663100E58EEE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController.xib; sourceTree = "<group>"; };
 		355CD16217F0663100E58EEE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FlipsideViewController.xib; sourceTree = "<group>"; };
+		355CD16F17F06A7300E58EEE /* openssl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openssl.xcodeproj; path = testChatterRestAPI/openssl.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +71,7 @@
 				355CD14117F0663100E58EEE /* UIKit.framework in Frameworks */,
 				355CD14317F0663100E58EEE /* Foundation.framework in Frameworks */,
 				355CD14517F0663100E58EEE /* CoreGraphics.framework in Frameworks */,
+				355CD17717F06EFF00E58EEE /* libcrypto.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +81,7 @@
 		355CD13417F0663100E58EEE = {
 			isa = PBXGroup;
 			children = (
+				355CD16F17F06A7300E58EEE /* openssl.xcodeproj */,
 				355CD14617F0663100E58EEE /* testChatterRestAPI */,
 				355CD13F17F0663100E58EEE /* Frameworks */,
 				355CD13E17F0663100E58EEE /* Products */,
@@ -115,6 +136,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		355CD17017F06A7300E58EEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				355CD17417F06A7300E58EEE /* libcrypto.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,6 +158,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				355CD17617F06E5D00E58EEE /* PBXTargetDependency */,
 			);
 			name = testChatterRestAPI;
 			productName = testChatterRestAPI;
@@ -154,12 +184,28 @@
 			mainGroup = 355CD13417F0663100E58EEE;
 			productRefGroup = 355CD13E17F0663100E58EEE /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 355CD17017F06A7300E58EEE /* Products */;
+					ProjectRef = 355CD16F17F06A7300E58EEE /* openssl.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				355CD13C17F0663100E58EEE /* testChatterRestAPI */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		355CD17417F06A7300E58EEE /* libcrypto.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcrypto.a;
+			remoteRef = 355CD17317F06A7300E58EEE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		355CD13B17F0663100E58EEE /* Resources */ = {
@@ -190,6 +236,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		355CD17617F06E5D00E58EEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = crypto;
+			targetProxy = 355CD17517F06E5D00E58EEE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		355CD14917F0663100E58EEE /* InfoPlist.strings */ = {
@@ -282,6 +336,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "testChatterRestAPI/testChatterRestAPI-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Library/openssl/build/openssl.build/openssl/include";
 				INFOPLIST_FILE = "testChatterRestAPI/testChatterRestAPI-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -293,6 +348,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "testChatterRestAPI/testChatterRestAPI-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Library/openssl/build/openssl.build/openssl/include";
 				INFOPLIST_FILE = "testChatterRestAPI/testChatterRestAPI-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
